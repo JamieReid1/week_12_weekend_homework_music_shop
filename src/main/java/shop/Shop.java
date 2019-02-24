@@ -30,4 +30,12 @@ public class Shop {
         return stock.remove((stock.indexOf(item)));
     }
 
+    public double profitMargin(){
+       double total = 0;
+       for (ISell item : stock){
+           total += item.calculateMarkup();
+       }
+       return total;
+    }
+
 }

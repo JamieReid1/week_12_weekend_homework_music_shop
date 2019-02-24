@@ -16,7 +16,7 @@ public class ShopTest {
     public void before(){
 
         guitar = new Guitar("Fender", "Electric", "White", 400.00, 700.00, 6);
-        saxophone = new Saxophone("Selmer", "Alto", "Brass", 500, 700);
+        saxophone = new Saxophone("Selmer", "Alto", "Brass", 500.00, 700.00);
         shop = new Shop("Ray's");
 
     }
@@ -45,6 +45,13 @@ public class ShopTest {
         assertEquals(2, shop.stockCount());
         shop.remove(guitar);
         assertEquals(1, shop.stockCount());
+    }
+
+    @Test
+    public void canCalculateProfitMargin(){
+        shop.add(guitar);
+        shop.add(saxophone);
+        assertEquals(500.00, shop.profitMargin(), 0.01);
     }
 
 }
