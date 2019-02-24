@@ -6,48 +6,53 @@ import static org.junit.Assert.assertEquals;
 
 public class GuitarTest {
 
-    Guitar fender;
+    Guitar guitar;
 
     @Before
     public void before(){
 
-        fender = new Guitar("Electric", "White", 400.00, 700.00, 6);
+        guitar = new Guitar("Fender", "Electric", "White", 400.00, 700.00, 6);
 
+    }
+
+    @Test
+    public void hasMake(){
+        assertEquals("Fender", guitar.getMake());
     }
 
     @Test
     public void hasType(){
-        assertEquals("Electric", fender.getType());
+        assertEquals("Electric", guitar.getType());
     }
 
     @Test
     public void hasColour(){
-        assertEquals("White", fender.getColour());
+        assertEquals("White", guitar.getColour());
     }
 
     @Test
     public void hasBuyPrice(){
-        assertEquals(400.00, fender.getBuyPrice(), 0.01);
+        assertEquals(400.00, guitar.getBuyPrice(), 0.01);
     }
 
     @Test
     public void hasSellPrice(){
-        assertEquals(700.00, fender.getSellPrice(), 0.01);
+        assertEquals(700.00, guitar.getSellPrice(), 0.01);
     }
 
     @Test
     public void hasNoOfStrings(){
-        assertEquals(6, fender.getNoOfStrings());
+        assertEquals(6, guitar.getNoOfStrings());
     }
 
     @Test
     public void canCalculateMarkup(){
-        assertEquals(300, fender.calculateMarkup(), 0.01);
+        assertEquals(300, guitar.calculateMarkup(), 0.01);
     }
 
     @Test
     public void canPlay(){
-        assertEquals("Thrum Twang!", fender.play());
+        assertEquals("Thrum Twang!", guitar.play());
     }
 
 }
